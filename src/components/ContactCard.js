@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react';
+import user from './user.jpg';
 
 const ContactCard = (props) => {
-    const {name,email} = props.contact;
+    const {id,name,email} = props.contact;
     return (
          <div className='item'>
+            <img className='ui avatar image' src={user} alt='user'/>
             <div className='content'>
                 <div className='header'>
                      {name}
                 </div>
                 <div>{email}</div>
             </div>
-            <i className='trash alternate outline icon' style={{color:"red"}}></i>
+            <i className='trash alternate outline icon' style={{color:"red"}} onClick={()=>props.clickHandler(id)}></i>
          </div>
       )
 }
